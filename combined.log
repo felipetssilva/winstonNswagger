@@ -1,0 +1,36 @@
+2020-11-17T21:58:39.255Z [Bank-API] info: GET /accounts - ENOENT: no such file or directory, open 'C:\nodejs\bootThis\httpRequests\accounts\accounts.json' 
+2020-11-17T22:07:36.472Z [Bank-API] info: API started!!!
+2020-11-17T22:15:40.319Z [Bank-API] info: PUT /accounts - Name and Balance can´t be blank!!! 
+2020-11-17T22:16:16.495Z [Bank-API] info: PUT /accounts - error is not defined 
+2020-11-17T22:17:42.916Z [Bank-API] info: PUT /accounts - error is not defined 
+2020-11-17T22:19:14.948Z [Bank-API] info: PUT /accounts - error is not defined 
+2020-11-17T22:21:55.169Z [Bank-API] info: PUT /accounts - Name and Balance can´t be blank!!! 
+2020-11-17T22:23:26.360Z [Bank-API] info: PUT /accounts - Name and Balance can´t be blank!!! 
+2020-11-17T22:24:43.148Z [Bank-API] info: PUT /accounts - Name and Balance can´t be blank!!! 
+2020-11-18T08:14:55.097Z [Bank-API] info: PUT /accounts - Cannot set property 'name' of undefined 
+2020-11-18T08:18:19.205Z [Bank-API] info: PUT /accounts - Cannot set property 'name' of undefined 
+2020-11-18T08:22:30.770Z [Bank-API] info: PUT /accounts - Cannot set property 'name' of undefined 
+2020-11-18T08:22:49.950Z [Bank-API] info: PUT /accounts - Cannot set property 'name' of undefined 
+2020-11-18T14:01:42.028Z [Bank-API] info: Put/account - {"id":"1","Name":"Maria Pidade","Balance":"1.000.090.000"}
+2020-11-18T15:26:59.817Z [Bank-API] info: Put/account - {"id":"3","Name":"Maria Pidade","Balance":"1.000.090.000"}
+2020-11-18T15:27:09.377Z [Bank-API] info: Put/account - {"id":"3","Name":"Maria Pidade","Balance":"1.000.090.000"}
+2020-11-18T15:27:09.383Z [Bank-API] info: Put/account - {"id":"3","Name":"Maria Pidade","Balance":"1.000.090.000"}
+2020-11-18T19:11:58.157Z [Bank-API] info: Put/account - {"id":"3","Name":"Maria Pidade","Balance":"1.000.090.000"}
+2020-11-18T20:24:14.090Z [Bank-API] info: index not found!!!
+2020-11-18T20:26:49.509Z [Bank-API] info: index not found!!!
+2020-11-18T20:31:02.387Z [Bank-API] info: index not found!!!
+2020-11-18T20:31:30.624Z [Bank-API] info: index not found!!!
+2020-11-18T20:33:13.178Z [Bank-API] info: PUT /accounts - Name and balance must be entered! 
+2020-11-18T20:33:36.586Z [Bank-API] info: PUT /accounts - Name and balance must be entered! 
+2020-11-18T20:34:41.352Z [Bank-API] info: PUT /accounts - Name and balance must be entered! 
+2020-11-18T20:35:44.088Z [Bank-API] info: PUT /accounts - Name and balance must be entered! 
+2020-11-18T20:36:00.582Z [Bank-API] info: PUT /accounts - Name and balance must be entered! 
+2020-11-18T20:36:21.639Z [Bank-API] info: PUT /accounts - Name and balance must be entered! 
+2020-11-18T20:39:05.873Z [Bank-API] info: PUT /accounts - name is not defined 
+2020-11-18T20:40:05.341Z [Bank-API] info: PUT /accounts - Name and balance must be entered! 
+2020-11-18T20:41:39.931Z [Bank-API] info: PUT /accounts - name is not defined 
+2020-11-18T20:41:54.495Z [Bank-API] info: PUT /accounts - name is not defined 
+2020-11-18T20:41:59.791Z [Bank-API] info: PUT /accounts - Name and balance must be entered! 
+2020-11-18T20:42:32.507Z [Bank-API] info: Put/account - {"id":"3","name":"Maria Sonia","balance":"22.000.090.000"}
+2020-11-18T20:43:30.760Z [Bank-API] info: Put/account - {"id":"3","name":"Maria Sonia2","balance":"22.000.090.220"}
+2020-11-18T20:44:07.432Z [Bank-API] info: Put/account - {"id":"3","name":"Maria Sonia3","balance":"22.000.090.999"}

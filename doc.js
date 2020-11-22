@@ -1,0 +1,347 @@
+export const swag = {
+  swagger: '2.0',
+  info: {
+    description: 'This is a sample Bank account API',
+    version: '1.0.0',
+    title: 'Bank API',
+    termsOfService: 'http://swagger.io/terms/',
+    contact: {
+      email: 'felipetssilva@hotmail.com',
+    },
+    license: {
+      name: 'Apache 2.0',
+      url: 'http://www.apache.org/licenses/LICENSE-2.0.html',
+    },
+  },
+  host: 'editor.swagger.io',
+  basePath: '/v2',
+  tags: [
+    {
+      name: 'Accounts',
+      description: 'Create, delete and update new customers',
+      externalDocs: {
+        description: 'Find out more',
+        url: 'http://localhost:3000',
+      },
+    },
+  ],
+  schemes: ['https', 'http'],
+  paths: {
+    '/accounts': {
+      post: {
+        tags: ['accounts'],
+        summary: 'Add a new customer',
+        description: '',
+        operationId: 'addCustomer',
+        consumes: ['application/json', 'application/xml'],
+        produces: ['application/xml', 'application/json'],
+        parameters: [
+          {
+            in: 'body',
+            name: 'body',
+            description: 'Customer object that needs to be added to the store',
+            required: true,
+            schema: {
+              $ref: '#/definitions/accounts',
+            },
+          },
+        ],
+        responses: {
+          405: {
+            description: 'Invalid input',
+          },
+        },
+      },
+      put: {
+        tags: ['accounts'],
+        summary: 'Update an existing customer',
+        description: '',
+        operationId: 'updateCustomer',
+        consumes: ['application/json', 'application/xml'],
+        produces: ['application/xml', 'application/json'],
+        parameters: [
+          {
+            in: 'body',
+            name: 'body',
+            description:
+              'Customer object that needs to be added to the accounts',
+            required: true,
+            schema: {
+              $ref: '#/definitions/accounts',
+            },
+          },
+        ],
+        responses: {
+          400: {
+            description: 'Invalid ID supplied',
+          },
+          404: {
+            description: 'Customer not found',
+          },
+          405: {
+            description: 'Validation exception',
+          },
+        },
+        security: [
+          {
+            petstore_auth: ['write:pets', 'read:pets'],
+          },
+        ],
+      },
+    },
+    '/accounts/{id}': {
+      get: {
+        tags: ['accounts'],
+        summary: 'Find Customer by ID',
+        description: 'Returns a single customer',
+        operationId: 'getCustomerById',
+        produces: ['application/xml', 'application/json'],
+        parameters: [
+          {
+            name: 'petId',
+            in: 'path',
+            description: 'ID of Customer to return',
+            required: true,
+            type: 'integer',
+            format: 'int64',
+          },
+        ],
+        responses: {
+          200: {
+            description: 'successful operation',
+            schema: {
+              $ref: '#/definitions/accounts',
+            },
+          },
+          400: {
+            description: 'Invalid ID supplied',
+          },
+          404: {
+            description: 'Customer not found',
+          },
+        },
+        security: [
+          {
+            api_key: [],
+          },
+        ],
+      },
+      delete: {
+        tags: ['accounts'],
+        summary: 'Deletes a Customer',
+        description: '',
+        operationId: 'deleteCustomer',
+        produces: ['application/xml', 'application/json'],
+        parameters: [
+          {
+            name: 'api_key',
+            in: 'header',
+            required: false,
+            type: 'string',
+          },
+          {
+            name: 'petId',
+            in: 'path',
+            description: 'Customer id to delete',
+            required: true,
+            type: 'integer',
+            format: 'int64',
+          },
+        ],
+        responses: {
+          400: {
+            description: 'Invalid ID supplied',
+          },
+          404: {
+            description: 'Customer not found',
+          },
+        },
+        security: [
+          {
+            petstore_auth: ['write:customer', 'read:customer'],
+          },
+        ],
+      },
+    },
+  },
+  securityDefinitions: {
+    petstore_auth: {
+      type: 'oauth2',
+      authorizationUrl: 'http://editor.swagger.io/oauth/dialog',
+      flow: 'implicit',
+      scopes: {
+        'write:pets': 'modify Customers in your account',
+        'read:pets': 'read your customers',
+      },
+    },
+    api_key: {
+      type: 'apiKey',
+      name: 'api_key',
+      in: 'header',
+    },
+  },
+  definitions: {
+    Order: {
+      type: 'object',
+      properties: {
+        id: {
+          type: 'integer',
+          format: 'int64',
+        },
+        petId: {
+          type: 'integer',
+          format: 'int64',
+        },
+        quantity: {
+          type: 'integer',
+          format: 'int32',
+        },
+        shipDate: {
+          type: 'string',
+          format: 'date-time',
+        },
+        status: {
+          type: 'string',
+          description: 'Order Status',
+          enum: ['placed', 'approved', 'delivered'],
+        },
+        complete: {
+          type: 'boolean',
+          default: false,
+        },
+      },
+      xml: {
+        name: 'Order',
+      },
+    },
+    Category: {
+      type: 'object',
+      properties: {
+        id: {
+          type: 'integer',
+          format: 'int64',
+        },
+        name: {
+          type: 'string',
+        },
+      },
+      xml: {
+        name: 'Category',
+      },
+    },
+    User: {
+      type: 'object',
+      properties: {
+        id: {
+          type: 'integer',
+          format: 'int64',
+        },
+        username: {
+          type: 'string',
+        },
+        firstName: {
+          type: 'string',
+        },
+        lastName: {
+          type: 'string',
+        },
+        email: {
+          type: 'string',
+        },
+        password: {
+          type: 'string',
+        },
+        phone: {
+          type: 'string',
+        },
+        userStatus: {
+          type: 'integer',
+          format: 'int32',
+          description: 'User Status',
+        },
+      },
+      xml: {
+        name: 'User',
+      },
+    },
+    Tag: {
+      type: 'object',
+      properties: {
+        id: {
+          type: 'integer',
+          format: 'int64',
+        },
+        name: {
+          type: 'string',
+        },
+      },
+      xml: {
+        name: 'Tag',
+      },
+    },
+    Pet: {
+      type: 'object',
+      required: ['name', 'photoUrls'],
+      properties: {
+        id: {
+          type: 'integer',
+          format: 'int64',
+        },
+        category: {
+          $ref: '#/definitions/Category',
+        },
+        name: {
+          type: 'string',
+          example: 'doggie',
+        },
+        photoUrls: {
+          type: 'array',
+          xml: {
+            name: 'photoUrl',
+            wrapped: true,
+          },
+          items: {
+            type: 'string',
+          },
+        },
+        tags: {
+          type: 'array',
+          xml: {
+            name: 'tag',
+            wrapped: true,
+          },
+          items: {
+            $ref: '#/definitions/Tag',
+          },
+        },
+        status: {
+          type: 'string',
+          description: 'pet status in the store',
+          enum: ['available', 'pending', 'sold'],
+        },
+      },
+      xml: {
+        name: 'Pet',
+      },
+    },
+    ApiResponse: {
+      type: 'object',
+      properties: {
+        code: {
+          type: 'integer',
+          format: 'int32',
+        },
+        type: {
+          type: 'string',
+        },
+        message: {
+          type: 'string',
+        },
+      },
+    },
+  },
+  externalDocs: {
+    description: 'Find out more about Swagger',
+    url: 'http://swagger.io',
+  },
+};
